@@ -3,7 +3,7 @@
 
 ## Tech Stack:
 
-**Frontend:** Next.js, shadcn-ui
+**Frontend:** Next.js, shadcn-ui  
 **Authentication:** Clerk.dev
 
 ## Getting Started:
