@@ -1,10 +1,11 @@
 # DisNext
-**DisNext** is a Discord-inspired chat application built with Next.js and Clerk (Clerk.Dev) for authentication. This project showcases a modern approach to building real-time chat applications using server-rendered React components and a secure, easy-to-integrate authentication solution.
+**DisNext** is a Discord-inspired chat application built with Next.js and Clerk (Clerk.Dev) for authentication. This project showcases a modern approach to building real-time chat applications using server-rendered React components and a secure, easy-to-integrate authentication solution. This project is initially based on: https://www.youtube.com/watch?v=ZbX4Ok9YX94&t=4573s
 
 ## Tech Stack:
 
 **Frontend:** Next.js, shadcn-ui  
-**Authentication:** Clerk.dev
+**Authentication:** Clerk.dev  
+**Databases:** MySQL via PlanetScale, Prisma ORM
 
 ## Getting Started:
 ### Clone the repository:
