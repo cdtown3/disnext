@@ -24,3 +24,7 @@ Place your Clerk API keys in the .env file
 ### Start the development server:
 **Bash:**  
 `npm run dev`
+
+### Start Prisma studio:
+**Bash:**
+`npx prisma studio`
