@@ -5,6 +5,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/providers/team-provider";
 import { cn } from "@/lib/utils";
 
+import "@uploadthing/react/styles.css";
+
 const font = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
