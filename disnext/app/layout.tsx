@@ -1,11 +1,13 @@
+import "./globals.css";
+import "@uploadthing/react/styles.css";
+
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
-import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import { ThemeProvider } from "@/components/providers/team-provider";
-import { cn } from "@/lib/utils";
 
-import "@uploadthing/react/styles.css";
+import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/providers/team-provider";
+import { ModalProvider } from "@/components/providers/modal-provider";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -32,6 +34,7 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem={false}
           storageKey="disnext-theme">
+            <ModalProvider />
             {children}
           </ThemeProvider>
         </body>
