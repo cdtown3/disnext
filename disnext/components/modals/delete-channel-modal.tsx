@@ -1,5 +1,8 @@
 "use client";
 
+import axios from "axios";
+import qs from "query-string";
+
 import { 
     Dialog,
     DialogContent,
@@ -11,15 +14,14 @@ import {
 import { useModal } from "@/hooks/use-modal-store";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import axios from "axios";
 import { useRouter } from "next/navigation";
 
-export const LeaveServerModal = () => {
-    const { onOpen, isOpen, onClose, type, data } = useModal();
+export const DeleteChannelModal = () => {
+    const { isOpen, onClose, type, data } = useModal();
     const router = useRouter();
 
-    const isModalOpen = isOpen && type === "leaveServer";
-    const { server } = data;
+    const isModalOpen = isOpen && type === "deleteChannel";
+    const { server, channel } = data;
 
     const [isLoading, setIsLoading] = useState(false);
 
@@ -27,9 +29,17 @@ export const LeaveServerModal = () => {
         try {
             setIsLoading(true);
 
-            await axios.patch(`/api/servers/${server?.id}/leave`);
+            const url = qs.stringifyUrl({
+                url: `/api/channels/${channel?.id}`,
+                query: {
+                serverId: server?.id,
+                }
+            });
+
+            await axios.delete(url);
 
             onClose();
+            setIsLoading(false);
             router.refresh();
         } catch(error) {
             console.error(error);
@@ -41,10 +51,11 @@ export const LeaveServerModal = () => {
             <DialogContent className="bg-white text-black p-0 overflow-hidden">
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
-                        Leave Server
+                        Delete Channel
                     </DialogTitle>
                     <DialogDescription className="text-center text-zinc-500">
-                        Are you sure you want to leave <span className="font-semibold text-indigo-500">{server?.name}</span>?
+                        Are you sure you want to do this? <br /> 
+                        #<span className="text-indigo-500 font-semibold">{channel?.name}</span> will be permanently deleted.
                     </DialogDescription>
                 </DialogHeader>
                 <DialogFooter
