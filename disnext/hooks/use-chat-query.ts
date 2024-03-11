@@ -1,5 +1,5 @@
 import qs from "query-string";
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { QueryFunctionContext, useInfiniteQuery } from "@tanstack/react-query";
 
 import { useSocket } from "@/components/providers/socket-provider";
 
@@ -18,7 +18,7 @@ export const useChatQuery = ({
 }: ChatQueryProps) => {
   const { isConnected } = useSocket();
 
-  const fetchMessages = async ({ pageParam = undefined }) => {
+  const fetchMessages = async ({ pageParam = undefined }: QueryFunctionContext<string[], any>) => {
     const url = qs.stringifyUrl({
       url: apiUrl,
       query: {
