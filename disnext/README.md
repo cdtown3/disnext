@@ -34,8 +34,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## To-do
-
-First, PlanetScale is shutting down its free-tier server, so I need to migrate to a docker server.  
-Second, Sockets.IO isn't really compatible with nextJS 14. I have to do some hacks on base-server.js in the Next package and I hate that. Going to probably run a server alongside to handle WS
