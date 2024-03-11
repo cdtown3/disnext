@@ -1,6 +1,7 @@
 # DisNext
 
 **DisNext** is a Discord-inspired chat application built with Next.js and Clerk (Clerk.Dev) for authentication. This project showcases a modern approach to building real-time chat applications using server-rendered React components and a secure, easy-to-integrate authentication solution. We are using Prisma as the ORM, PlanetScale for DB, and UploadThing for file uploads. This project is initially based on: https://www.youtube.com/watch?v=ZbX4Ok9YX94&t=4573s
+There are a few items I want to make better before moving on to another project. The first is to migrate the DB to local (should be simple), and second is to run a separate api for websockets, as it just isn't playing well with next14.
 
 ## Tech Stack:
 
